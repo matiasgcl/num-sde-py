@@ -10,7 +10,7 @@ T = 1;
 dt = T/L;
 xvals = np.linspace(0,T,L);
 W = np.zeros(L);
-xi = np.random.normal(0,1,L);
+xi = np.random.normal(0,1,L-1);
 start_time = time.time();
 for i in range(L-1):
     W[i+1] = W[i] + np.sqrt(dt)*xi[i];
@@ -24,12 +24,11 @@ plt.grid(True);
 plt.show();
 
 # vectorized(ish)
-dB = np.zeros(L);
+dB = np.zeros(L-1);
 B = np.zeros(L);
 start_time = time.time();
 dB = np.sqrt(dt)*xi;
-dB[0] = 0; # Do not forget!
-B = np.cumsum(dB);
+B = np.append([0],np.cumsum(dB));
 elapsed2 = time.time()-start_time;
 print(elapsed2);
 ratio = elapsed2/elapsed*100;
@@ -43,11 +42,8 @@ plt.show();
 
 def buildMB(L,T):
     # vectorized(ish)
-    dB = np.zeros(L);
-    B = np.zeros(L);
-    dB = np.sqrt(dt)*np.random.normal(0,1,L);
-    dB[0] = 0; # Do not forget!
-    B = np.cumsum(dB);
+    dB = np.sqrt(dt)*np.random.normal(0,1,L-1);
+    B = np.append([0],np.cumsum(dB));
     return(B);
 
 # exercise 1: Refining the BM (vectorized).
@@ -69,11 +65,8 @@ plt.show();
 c = 1/10;
 Tc = T*(c*c);
 dtc = Tc/L;
-dBc = np.zeros(L);
-Bc = np.zeros(L);
-dBc = np.sqrt(dtc)*np.random.normal(0,1,L);
-dBc[0] = 0; # Do not forget!
-Bc = 1/c*np.cumsum(dBc);
+dBc = np.sqrt(dtc)*np.random.normal(0,1,L-1);
+Bc = 1/c*np.append([0],np.cumsum(dBc));
 xcvals = np.linspace(0,Tc,L);
 plt.plot(xcvals,Bc);
 plt.title('V(t)=1/c*W(c^2*t)');
