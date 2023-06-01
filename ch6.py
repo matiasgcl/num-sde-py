@@ -31,4 +31,17 @@ plt.xlabel('t');
 plt.ylabel('X(t)');
 plt.show();
 
-
+# Now lets plot the Orstein-Uhlenbeck process
+# Y(t)=\sigma exp(-\lambda t)*int_0^t exp(\lambda*s)*dW(s)
+lamb = 1;
+#ito = np.sum(W[0:-1]*dW)
+# np.sum(np.exp(lamb*tvals)*dW*)
+ito = np.zeros(L-1);
+for i in range(L-1):
+    ito[i] = np.sum(np.exp(lamb*tvals[0:i+1])*dW[0:i+1])
+Y = sigma*np.exp(-lamb*tvals[0:-1])*ito
+plt.plot(tvals[0:-1],Y);
+plt.title('Orstein-Uhlenbeck solution path');
+plt.xlabel('t');
+plt.ylabel('Y(t)');
+plt.show();
