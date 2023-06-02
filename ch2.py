@@ -1,5 +1,5 @@
-# CH02.M  Frequency with which conf interval contains exact mean.
-#         Exact mean is known to equal 1.
+# Chapter 2: Frequency with which conf interval contains exact mean.
+#            Exact mean is known to equal 1.
 
 import numpy as np
 import numpy.random as random

@@ -1,8 +1,8 @@
+# Chapter 6: Plot a path of linear SDE solution
+
 import numpy as np
 import numpy.random as random
 import matplotlib.pyplot as plt
-
-# CH06   Plot a path of linear SDE solution
 
 #np.random.seed(666);
 L = 5001;

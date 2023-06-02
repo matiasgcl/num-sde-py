@@ -1,4 +1,5 @@
-#CH07.M     Approximate Stratonovich integral of W dW
+# Chapter 7: Approximate Stratonovich integral of W dW
+
 import numpy as np
 import numpy.random as random
 

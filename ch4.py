@@ -1,8 +1,9 @@
+# Chapter 4: Computing Ito integrals
+
 import numpy as np
 import numpy.random as random
 import matplotlib.pyplot as plt
 
-# Chap 4: Computing Ito integrals
 #np.random.seed(666);
 L = 5001;
 T = 1;
