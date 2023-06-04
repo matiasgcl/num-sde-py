@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 
 #np.random.seed(666);
 mu = 2; sigma = 0.1; Xzero = 1; T = 1;   # problem parameters
-M = 5*10**4;                             # 50,000 sample paths
+M = 5*10**4;                             # sample paths
 
 Xem = zeros(5,1);                        # preallocate arrays
 for p in range(5):                       # loop over timesteps
