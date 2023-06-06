@@ -1,4 +1,4 @@
-# Chapter 10:  Strong endpoint convergence test for Euler-Maruyama
+# Chapter 10:  Strong endpoint convergence test for Euler-Maruyama.
 #
 # Discretized Brownian path over [0,1] has dt = 2^(-9).
 # EM uses 5 different stepsizes: 16dt, 8dt, 4dt, 2dt, dt.
